@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Shayan"</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
+        body {
+            font-family: 'Uncial Antiqua', cursive;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: url('https://images.unsplash.com/photo-1558980664-1cab8d1de5c8') no-repeat center center fixed;
+            background-size: cover;
+            color: #f5e6c8;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            font-size: 36px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+        a {
+            text-decoration: none;
+            color: #c49a6c;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: #e0c097;
+        }
+        .content {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>"Shayan"</h1>
+        <div class="content">{{printf "%s" .Body}}</div>
+    </div>
+</body>
+</html>
+
