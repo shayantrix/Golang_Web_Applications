@@ -108,9 +108,26 @@ func main(){
 	log.Fatal(http.ListenAndServe(":8080", r))
 }
 
-//func getMoviesByID(w http.ResponseWriter, r *http.Request){
+func getMoviesByID(w http.ResponseWriter, r *http.Request){
+	w.Header().Set("Content-Type", "application/json")
+	//reads the parameters
+	params := mux.Vars(r)
+	id, err := strconv.ParseInt(params["id"], 10, 64)
+	if err != nil {
+		log.Fatal(err)
+	}
+	movies, err := MoviesByID()
+	if err != nil{
+		log.Fatal(err)
+	}
+	fmt.Printf("Movies found: %v\n", movies)
 	
-//}
+	for i, item := range movies{
+		if item.ID == id{
+			json.NewEncoder(w).Encode(movies[i])
+		}
+	}
+}
 
 func getMovies(w http.ResponseWriter, r *http.Request){
 	//var err error
